@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplayer Checkers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Checkers</h1>
+
+      <!-- Lobby -->
+      <section id="lobby" class="panel">
+        <p class="tagline">Real-time multiplayer over WebSockets</p>
+        <button id="quickMatch" class="btn primary">Quick Match</button>
+        <div class="divider"><span>or play a friend</span></div>
+        <div class="room-row">
+          <input
+            id="roomInput"
+            class="room-input"
+            maxlength="8"
+            placeholder="ROOM CODE"
+            autocomplete="off"
+          />
+          <button id="joinRoom" class="btn">Join / Create</button>
+        </div>
+      </section>
+
+      <!-- Game -->
+      <section id="game" class="panel hidden">
+        <div class="status-bar">
+          <div id="status" class="status">Connecting…</div>
+          <div class="room-tag">Room <span id="roomCode">—</span></div>
+        </div>
+
+        <div class="board-wrap">
+          <div id="board" class="board"></div>
+        </div>
+
+        <div class="footer">
+          <div id="colorBadge" class="badge">—</div>
+          <button id="rematchBtn" class="btn hidden">Rematch</button>
+          <button id="leaveBtn" class="btn ghost">Leave</button>
+        </div>
+      </section>
+
+      <div id="toast" class="toast hidden"></div>
+    </main>
+
+    <script src="client.js"></script>
+  </body>
+</html>
